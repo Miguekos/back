@@ -1,7 +1,9 @@
 <?php
 
 use App\Article;
+use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Resources\Product as ProductResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,13 @@ use Illuminate\Http\Request;
 //    return Article::all();
 //});
 
+Route::resource('products','productController');
+
+//Route::get('/products/{id}', 'ProductController@show');
+
 Route::resource('articles','ArticleController');
+Route::resource('speakers','SpeakerController');
+Route::resource('charlas','CharlaController');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
