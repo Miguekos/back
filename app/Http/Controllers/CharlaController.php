@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Charla;
-use App\Http\Resources\Charlas;
 use Illuminate\Http\Request;
 
 class CharlaController extends Controller
 {
+
+//    public function __construct()
+//    {
+//        $this->middleware('admin');
+//    }
+
     /**
      * Display a listing of the resource.
      *

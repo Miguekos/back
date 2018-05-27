@@ -17,11 +17,10 @@ use Illuminate\Http\Request;
 //Route::get('articles', function (){
 //    return Article::all();
 //});
+    Route::apiResource('salas','SalaController');
+    Route::apiResource('speakers','SpeakerController');
+    Route::apiResource('charlas','CharlaController');
 
-Route::apiResource('salas','SalaController');
-Route::apiResource('speakers','SpeakerController');
-Route::apiResource('charlas','CharlaController');
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+    Route::middleware('auth:api')->get('/user', function (Request $request) {
+        return $request->user();
+    });

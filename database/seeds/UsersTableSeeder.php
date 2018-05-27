@@ -25,6 +25,7 @@ class UsersTableSeeder extends Seeder
         User::create([
             'name' => 'Admin',
             'email' => 'admin@tektonlab.com',
+            'role' => 'admin',
             'password' => $password,
         ]);
 

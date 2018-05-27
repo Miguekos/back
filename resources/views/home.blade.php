@@ -15,9 +15,9 @@
                     @endif
                     <ul>
 
-                        <li><a href="{{ route('salas.index')  }}">Salas</a></li>
-                        <li><a href="{{ route('speakers.index') }}">Speakers</a></li>
-                        <li><a href="{{ route('charlas.index') }}">Charlas</a></li>
+                        <li><a href="{{ route('v_salas.index')  }}">Salas</a></li>
+                        <li><a href="{{ route('v_speakers.index') }}">Speakers</a></li>
+                        <li><a href="{{ route('v_charlas.index') }}">Charlas</a></li>
 
                     </ul>
 
