@@ -21,7 +21,21 @@
                         <td>{{ $sala->id }}</td>
                         <td>{{ $sala->nombre }}</td>
                         <td>{{ $sala->cant_max }}</td>
-                        <td><a href="{{ route('vsalas.edit', ['sala' => $sala->id]) }}">Editar</a></td>
+                        <td>
+                            <a href="{{ route('vsalas.edit', ['sala' => $sala->id]) }}">Editar</a>
+                            <form method="POST" action="{{ route('vsalas.destroy', ['sala' => $sala->id]) }}" accept-charset="UTF-8">
+                                <input name="_method" type="hidden" value="DELETE">
+                                {{--<input name="_token" type="hidden" value="">--}}
+                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                <input class="btn btn-danger" type="submit" value="Delete">
+                            </form>
+
+                            {{ Form::open(array('url' => 'vsalas/'.$sala->id)) }}
+                            {{ Form::hidden("_method", "DELETE") }}
+                            {{ Form::submit("Eliminar") }}
+                            {{ Form::close() }}
+
+                        </td>
                     </tr>
                 @endforeach
 
