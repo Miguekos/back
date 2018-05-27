@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 
 class VsalasController extends Controller
@@ -61,30 +62,18 @@ class VsalasController extends Controller
 
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function destroy($id){
-//        $sala = Sala::find($id);
-//        $sala->delete();
-//        return view('salas.index');
-//        $sala = Sala::find($id);
-//        $sala->delete();
-//        $sala->delete();
-//        $process = new MenuProcess();
-//        $process->deleteMenu($id);
-//        $sala = Sala::find($id);
-//        $sala->delete();
+        $sala = Sala::find($id);
+        $sala->delete();
 
-//        $sala = Sala::findOrFail($id);
-//
-//        $sala->delete();
-
-//        return view('vsala.index')->with([
-//            'flash_message' => 'Deleted',
-//            'flash_message_important' => false
-//        ]);
 
         // redirect
-//        Session::flash('message', 'Successfully deleted the sala!');
-//        return Redirect::to('salas.index');
-        return "Entro en destroy";
+        // Session::flash('message', 'Successfully deleted the sala!');
+        return Redirect::to('vsalas');
+
     }
 }

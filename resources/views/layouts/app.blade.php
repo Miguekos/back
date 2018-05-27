@@ -27,6 +27,16 @@
                 <a class="navbar-brand" href="#">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <a class="navbar-brand" href="/vsalas">
+                    Charlas
+                </a>
+                <a class="navbar-brand" href="/vcharlas">
+                    Salas
+                </a>
+                <a class="navbar-brand" href="/vspeakers">
+                    Speakers
+                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,7 +78,9 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
