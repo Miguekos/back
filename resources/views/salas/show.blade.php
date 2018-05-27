@@ -7,7 +7,7 @@
     <h1>Nombre: {{ $sala->nombre }}</h1>
     <h1>Sala: {{ $sala->cant_max}}</h1>
 
-    <a href="">Atras</a>
+    <a href="{{ url('/vsalas') }}">Atras</a>
 
 
 @endsection

@@ -21,7 +21,7 @@
                         <td>{{ $sala->id }}</td>
                         <td>{{ $sala->nombre }}</td>
                         <td>{{ $sala->cant_max }}</td>
-                        <td><a href="{{ route('salas.edit', ['sala' => $sala->id]) }}">Editar</a></td>
+                        <td><a href="{{ route('vsalas.edit', ['sala' => $sala->id]) }}">Editar</a></td>
                     </tr>
                 @endforeach
 

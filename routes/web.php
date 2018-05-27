@@ -20,9 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'admin'], function () {
-//    Route::resource('vsalas','VsalasController');
-    Route::get('/salas','VsalasController@index')->name('salas');
-    Route::get('/salas/{sala}/edit','VsalasController@edit')->name('salas.edit');
+    Route::resource('vsalas','VsalasController');
+//    Route::get('/salas','VsalasController@index')->name('salas');
+//    Route::get('/salas/{sala}/edit','VsalasController@edit')->name('salas.edit');
 
 
     Route::resource('vcharlas','VcharlasController');

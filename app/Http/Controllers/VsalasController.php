@@ -41,7 +41,7 @@ class VsalasController extends Controller
     public function show($id){
         $sala = Sala::find($id);
         return view('salas.show', compact('sala'));
-
+        //return "entro en show";
     }
 
     public function edit($id){
@@ -53,13 +53,13 @@ class VsalasController extends Controller
 
     public function update(Request $request, $id){
 
-        $salas = Sala::find($id);
-        $salas->nombre = $request->get('nombre');
-        $salas->cant_max = $request->get('cant_max');
-        $salas->save();
+        $sala = Sala::find($id);
+        $sala->nombre = $request->get('nombre');
+        $sala->cant_max = $request->get('cant_max');
+        $sala->save();
 //        return "De verdad llego aqui";
-//        return Sala::find($id);
-        //return redirect()->view('home.index');
+//        return url('/vsalas');
+        return view('salas.show', compact('sala'));
 
     }
 
