@@ -17,7 +17,6 @@ class CreateSalasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('cant_max');
-            $table->unsignedInteger('sala_id');
             $table->timestamps();
         });
     }

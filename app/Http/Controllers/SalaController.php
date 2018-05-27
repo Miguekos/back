@@ -14,17 +14,7 @@ class SalaController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Sala::all ();
     }
 
     /**
@@ -46,18 +36,8 @@ class SalaController extends Controller
      */
     public function show(Sala $sala)
     {
-        //
-    }
+        return Sala::find($sala);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Sala  $sala
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Sala $sala)
-    {
-        //
     }
 
     /**

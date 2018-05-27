@@ -1,6 +1,7 @@
 <?php
 
 use App\Article;
+use App\Sala;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Resources\Product as ProductResource;
@@ -24,7 +25,7 @@ use App\Http\Resources\Product as ProductResource;
 Route::resource('products','productController');
 
 //Route::get('/products/{id}', 'ProductController@show');
-
+Route::resource('salas','SalaController');
 Route::resource('articles','ArticleController');
 Route::resource('speakers','SpeakerController');
 Route::resource('charlas','CharlaController');

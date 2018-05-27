@@ -46,7 +46,7 @@ class SpeakerController extends Controller
      */
     public function show(Speaker $speaker)
     {
-        //
+        return Speaker::find($speaker);
     }
 
     /**

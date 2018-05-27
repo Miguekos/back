@@ -16,7 +16,6 @@ class CreateSpeakersTable extends Migration
         Schema::create('speakers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->unsignedInteger('speakers_id');
             $table->timestamps();
         });
     }

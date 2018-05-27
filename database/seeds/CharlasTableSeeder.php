@@ -19,10 +19,12 @@ class CharlasTableSeeder extends Seeder
         $faker = \Faker\Factory::create('es_ES');
 
         // And now, let's create a few articles in our database:
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Charla::create([
                 'nombre' => $faker->name,
                 'fecha' => $faker->dateTime($max = 'now', $timezone = null),
+                'sala_id' => $faker->randomNumber(1),
+                'speaker_id' => $faker->randomNumber(1),
             ]);
         }
     }

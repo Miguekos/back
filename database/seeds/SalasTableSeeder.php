@@ -1,9 +1,9 @@
 <?php
 
-use App\Speaker;
+use App\Sala;
 use Illuminate\Database\Seeder;
 
-class SpeakersTableSeeder extends Seeder
+class SalasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,16 +13,17 @@ class SpeakersTableSeeder extends Seeder
     public function run()
     {
         // Let's truncate our existing records to start from scratch.
-        Speaker::truncate();
+        Sala::truncate();
 
-        // Initialize the Faker package. We can use several different locales for it, so
+        // Incant_maxe Faker package. We can use several different locales for it, so
         // let's use the german locale to play with it.
         $faker = \Faker\Factory::create('es_ES');
 
         // And now, let's create a few articles in our database:
         for ($i = 0; $i < 10; $i++) {
-            Speaker::create([
-                'nombre' => $faker->name,
+            Sala::create([
+                'nombre' => "Sala " . $faker->randomNumber(1),
+                'cant_max' => $faker->randomNumber(1),
             ]);
         }
     }
