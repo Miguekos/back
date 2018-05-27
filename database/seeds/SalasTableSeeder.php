@@ -20,7 +20,7 @@ class SalasTableSeeder extends Seeder
         $faker = \Faker\Factory::create('es_ES');
 
         // And now, let's create a few articles in our database:
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             Sala::create([
                 'nombre' => "Sala " . $faker->randomNumber(1),
                 'cant_max' => $faker->randomNumber(1),
