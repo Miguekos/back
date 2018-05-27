@@ -10,7 +10,7 @@ class Speaker extends Model
 
     public function charlas(){
 
-        return $this->hasMany('App\Charla');
+        return $this->hasMany('App\Charla')-withTimestamps();
 
     }
 }

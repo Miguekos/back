@@ -18,16 +18,6 @@ class SpeakerController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,7 +25,8 @@ class SpeakerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $speaker = Speaker::create($request->all());
+        return response()->json($speaker, 201);
     }
 
     /**
@@ -46,18 +37,8 @@ class SpeakerController extends Controller
      */
     public function show(Speaker $speaker)
     {
-        return Speaker::find($speaker);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Speaker  $speaker
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Speaker $speaker)
-    {
-        //
+//        return Speaker::find($speaker);
+        return $speaker->toArray();
     }
 
     /**
@@ -69,7 +50,10 @@ class SpeakerController extends Controller
      */
     public function update(Request $request, Speaker $speaker)
     {
-        //
+        $speakers = Speaker::findOrFail($speaker);
+        $speakers->update($request->all());
+
+        return response()->json($speakers, 200);
     }
 
     /**
@@ -80,6 +64,8 @@ class SpeakerController extends Controller
      */
     public function destroy(Speaker $speaker)
     {
-        //
+        $speaker->delete();
+        return response()->json(null, 204);
+
     }
 }

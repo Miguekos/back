@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Charla;
-use App\Http\Resources\Product;
+use App\Http\Resources\Charlas;
 use Illuminate\Http\Request;
 
 class CharlaController extends Controller
@@ -16,17 +16,6 @@ class CharlaController extends Controller
     public function index()
     {
         return Charla::all();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-
     }
 
     /**
@@ -49,21 +38,10 @@ class CharlaController extends Controller
      */
     public function show(Charla $charla)
     {
-        return Charla::find($charla);
+        //return Charla::find($charla);
+        return $charla->toArray();
 
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Charla  $charla
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Charla $charla)
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -73,10 +51,10 @@ class CharlaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $article = Charla::findOrFail($id);
-        $article->update($request->all());
+        $charlas = Charla::findOrFail($id);
 
-        return response()->json($article, 200);
+        $charlas->update($request->all());
+        return response()->json($charlas, 200);
     }
 
     /**
@@ -87,6 +65,7 @@ class CharlaController extends Controller
      */
     public function destroy(Charla $charla)
     {
-        //
+        $charla->delete();
+        return response()->json(null, 204);
     }
 }

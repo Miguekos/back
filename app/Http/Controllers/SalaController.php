@@ -14,7 +14,7 @@ class SalaController extends Controller
      */
     public function index()
     {
-        return Sala::all ();
+        return Sala::all();
     }
 
     /**
@@ -25,7 +25,8 @@ class SalaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $salas = Sala::create($request->all());
+        return response()->json($salas, 201);
     }
 
     /**
@@ -36,8 +37,8 @@ class SalaController extends Controller
      */
     public function show(Sala $sala)
     {
-        return Sala::find($sala);
-
+//        return Sala::find($sala);
+        return $sala->toArray();
     }
 
     /**
@@ -49,7 +50,8 @@ class SalaController extends Controller
      */
     public function update(Request $request, Sala $sala)
     {
-        //
+        $sala->update($request->all());
+        return response()->json($sala, 200);
     }
 
     /**
@@ -60,6 +62,7 @@ class SalaController extends Controller
      */
     public function destroy(Sala $sala)
     {
-        //
+        $sala->delete();
+        return response()->json(null, 204);
     }
 }

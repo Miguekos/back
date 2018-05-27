@@ -1,10 +1,6 @@
 <?php
 
-use App\Article;
-use App\Sala;
-use App\Product;
 use Illuminate\Http\Request;
-use App\Http\Resources\Product as ProductResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +18,9 @@ use App\Http\Resources\Product as ProductResource;
 //    return Article::all();
 //});
 
-Route::resource('products','productController');
-
-//Route::get('/products/{id}', 'ProductController@show');
-Route::resource('salas','SalaController');
-Route::resource('articles','ArticleController');
-Route::resource('speakers','SpeakerController');
-Route::resource('charlas','CharlaController');
+Route::apiResource('salas','SalaController');
+Route::apiResource('speakers','SpeakerController');
+Route::apiResource('charlas','CharlaController');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
