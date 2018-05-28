@@ -8,9 +8,10 @@
         <div class="text-center">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    {{ csrf_field() }}
+                    
 
-                    <form action="{{ route('salas.store') }}" method="POST">
+                    <form action="{{ route('vsalas.store') }}" method="POST">
+                        {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
                             <label for="nombre"><h5>Nombre de la Categoria</h5></label>
                             <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}">

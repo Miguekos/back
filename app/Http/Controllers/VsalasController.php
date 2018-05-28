@@ -29,8 +29,8 @@ class VsalasController extends Controller
         $salas->nombre = $request->get('nombre');
         $salas->cant_max = $request->get('cant_max');
         $salas->save();
-        return redirect()->view('home');
-
+        return Redirect::to ('vsalas');
+        //return "Aqui estoy";
     }
 
     public function show($id){

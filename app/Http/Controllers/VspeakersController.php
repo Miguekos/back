@@ -24,14 +24,13 @@ class VspeakersController extends Controller
 
         $this->validate($request, [
             'nombre' => 'required|min:3|unique:speakers',
-            'cant_max' => 'required|integer'
         ]);
 
         $speakers = new Speaker;
         $speakers->nombre = $request->get('nombre');
-        $speakers->cant_max = $request->get('cant_max');
         $speakers->save();
-        return redirect()->view('home');
+        //return view('vspeakers.index');
+        return Redirect::to ('vspeakers');
 
     }
 

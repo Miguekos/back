@@ -8,6 +8,9 @@ class Sala extends Model
 {
     protected $fillable = ['nombre','cant_max'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function charlas(){
 
         return $this->hasMany('App\Charla')-withTimestamps();

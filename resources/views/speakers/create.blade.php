@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
-                    <form action="{{ route('speakers.store') }}" method="POST">
+                    <form action="{{ route('vspeakers.store') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
                             <label for="nombre"><h5>Nombre del Speaker</h5></label>
