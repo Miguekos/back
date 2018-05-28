@@ -27,10 +27,10 @@
                 <a class="navbar-brand" href="#">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="navbar-brand" href="/vsalas">
+                <a class="navbar-brand" href="/vcharlas">
                     Charlas
                 </a>
-                <a class="navbar-brand" href="/vcharlas">
+                <a class="navbar-brand" href="/vsalas">
                     Salas
                 </a>
                 <a class="navbar-brand" href="/vspeakers">

@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="card-header">Salas</div>
+    <div class="card-header"><a class="btn btn-info" href="{{ route('vsalas.create') }}">Nueva Sala </a></div>
         <div class="card-body">
 
             <table class="table table-bordered table-hover">
@@ -22,8 +22,8 @@
                         <td>{{ $sala->nombre }}</td>
                         <td>{{ $sala->cant_max }}</td>
                         <td>
-                            <a href="{{ route('vsalas.edit', ['sala' => $sala->id]) }}">Editar</a>
                             <form method="POST" action="{{ route('vsalas.destroy', ['sala' => $sala->id]) }}" accept-charset="UTF-8">
+                                <a class="btn btn-warning" href="{{ route('vsalas.edit', ['sala' => $sala->id]) }}">Editar</a>
                                 <input name="_method" type="hidden" value="DELETE">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <input class="btn btn-danger" type="submit" value="Delete">
