@@ -49,7 +49,7 @@ class VsalasController extends Controller
     public function update(Request $request, $id){
 
         $this->validate($request, [
-            'nombre' => 'required|min:3|unique:salas',
+            'nombre' => 'required',
             'cant_max' => 'required|integer'
         ]);
 
