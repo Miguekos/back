@@ -17,8 +17,10 @@ class CreateCharlasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->dateTime('fecha');
-            $table->unsignedInteger('sala_id');
-            $table->unsignedInteger('speaker_id');
+            $table->integer('sala_id')->unsigned();
+            $table->foreign ('sala_id')->references('id')->on('salas');
+            $table->integer('speaker_id')->unsigned();
+            $table->foreign ('speaker_id')->references('id')->on('speakers');
             $table->timestamps();
         });
 
