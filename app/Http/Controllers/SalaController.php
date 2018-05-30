@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class SalaController extends Controller
 {
@@ -14,9 +15,11 @@ class SalaController extends Controller
      */
     public function index()
     {
-        return Sala::all();
+        //return Sala::all ();
+//        $sala = Sala::all ();
+//        return response()->json([$sala]);
+        return response(Sala::all()->jsonSerialize(), 200);
     }
-
     /**
      * Store a newly created resource in storage.
      *

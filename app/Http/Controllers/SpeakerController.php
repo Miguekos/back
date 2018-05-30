@@ -50,10 +50,9 @@ class SpeakerController extends Controller
      */
     public function update(Request $request, Speaker $speaker)
     {
-        $speakers = Speaker::findOrFail($speaker);
-        $speakers->update($request->all());
 
-        return response()->json($speakers, 200);
+        $speaker->update($request->all());
+        return response()->json($speaker, 200);
     }
 
     /**
